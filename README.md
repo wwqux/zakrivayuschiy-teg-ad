@@ -1,1 +1,1 @@
-https://github.com/wwqux/slozhno-sosredotochitsya-ad
+https://github.com/wwqux/zakrivayuschiy-teg-ad
