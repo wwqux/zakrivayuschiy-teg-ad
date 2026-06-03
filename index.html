@@ -1,5 +1,168 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List | Простой список задач</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    .todo-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+    }
+
+    .todo-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .todo-header h1 {
+      font-size: 1.8rem;
+      color: #333;
+    }
+
+    .todo-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .todo-input {
+      flex: 1;
+      padding: 0.7rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .todo-input:focus {
+      border-color: #666;
+    }
+
+    .todo-add-button {
+      background: #444;
+      color: white;
+      border: none;
+      padding: 0 1.2rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .todo-add-button:hover {
+      background: #555;
+    }
+
+    .todo-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .todo-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.7rem 1rem;
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 4px;
+    }
+
+    .todo-item-text {
+      flex: 1;
+      font-size: 1rem;
+      color: #333;
+      word-break: break-word;
+    }
+
+    .todo-buttons {
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    .todo-button {
+      background: transparent;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 3px;
+    }
+
+    .todo-button:hover {
+      background: #f0f0f0;
+    }
+
+    .todo-button-edit {
+      color: #0066cc;
+    }
+
+    .todo-button-duplicate {
+      color: #009933;
+    }
+
+    .todo-button-delete {
+      color: #cc0000;
+    }
+
+    .empty-message {
+      text-align: center;
+      color: #999;
+      padding: 1.5rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 500px) {
+      body {
+        padding: 0.5rem;
+      }
+      .todo-container {
+        padding: 1rem;
+      }
+      .todo-form {
+        flex-direction: column;
+      }
+      .todo-add-button {
+        padding: 0.5rem;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="todo-container">
+    <div class="todo-header">
+      <h1>Список задач</h1>
+    </div>
+    <form class="todo-form">
+      <input type="text" class="todo-input" placeholder="Добавить новую задачу...">
+      <button type="button" class="todo-add-button">Добавить</button>
+    </form>
+    <ul class="todo-list">
+      <li class="empty-message">Список пуст. Добавьте первую задачу!</li>
+    </ul>
+  </div>
+</body>
+
 </head>
 <body>
   <div class="todo-container">
